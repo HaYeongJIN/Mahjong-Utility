@@ -1,17 +1,32 @@
-# mahjong_utility_new
+# Mahjong Utility
+해당 프로젝트는 마작을 즐길 때 유용한 기능들을 넣은 앱입니다.
 
-A new Flutter project.
 
-## Getting Started
+## 미리보기
 
-This project is a starting point for a Flutter application.
+## 주요 기능
+### 1. 점수 계산
+상단에 도라, 하단에 손패를 화면에 밎춰 찍으면 점수를 계산해줍니다.
+### 2. 대기패 분석
+손패를 화면에 맞춰 찍으면 화료패를 알려줍니다.
+### 3. 디지털 전탁
+손탁으로 게임 진행 시 도움되는 점수표시, 화료, 유국등의 기능을 제공합니다.
 
-A few resources to get you started if this is your first Flutter project:
+## 기술 스택
+### Frontend
+* Framework: Flutter(Dart)
+* Platform: Android(minSdkversion 21)
+* On-Device ML: Tensorflow Lite
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### Core Logic
+* Language: Rust
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Machine Learning
+* Model: YOLOv11
+* Environment: Google Colab(Python으로 데이터셋 학습)
+
+## Dataset
+기존 오픈 데이터셋과 부족한 데이터를 직접 촬영하여 추가했습니다.
+
+* Open datasets: https://universe.roboflow.com/project-xv49e/mahjong-x5dzz
+* Custom datasets: 부족한 뒷면 데이터셋과 적도라패들을 직접 촬영하여 추가했습니다.
