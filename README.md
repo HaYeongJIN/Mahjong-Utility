@@ -3,7 +3,11 @@
 
 
 ## 미리보기
+![메인화면](https://github.com/HaYeongJIN/Mahjong-Utility/blob/development/image/Screenshot_20260510_205137.jpg)
 
+![대기패분석](https://github.com/HaYeongJIN/Mahjong-Utility/blob/development/image/Screenshot_20260330_162116.jpg)
+
+![디지털전탁](https://github.com/HaYeongJIN/Mahjong-Utility/blob/development/image/Screenshot_20260510_205141.jpg)
 ## 주요 기능
 ### 1. 점수 계산
 상단에 도라, 하단에 손패를 화면에 밎춰 찍으면 점수를 계산해줍니다.
