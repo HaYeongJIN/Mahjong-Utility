@@ -27,6 +27,7 @@ https://github.com/HaYeongJIN/Mahjong-Utility/releases/tag/v1.0.0
 
 ### Core Logic
 * Language: Rust
+* Rust [Agari](https://github.com/rysb-dev/agari) 라이브러리를 사용하여 점수계산 및 대기패 분석을 진행합니다.
 
 ### Machine Learning
 * Model: YOLOv11
@@ -35,5 +36,5 @@ https://github.com/HaYeongJIN/Mahjong-Utility/releases/tag/v1.0.0
 ## Dataset
 기존 오픈 데이터셋과 부족한 데이터를 직접 촬영하여 추가했습니다.
 
-* Open datasets: https://universe.roboflow.com/project-xv49e/mahjong-x5dzz
+* [Open datasets](https://universe.roboflow.com/project-xv49e/mahjong-x5dzz)
 * Custom datasets: 부족한 뒷면 데이터셋과 적도라패들을 직접 촬영하여 추가했습니다.
