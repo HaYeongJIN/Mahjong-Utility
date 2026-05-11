@@ -17,7 +17,7 @@
 손탁으로 게임 진행 시 도움되는 점수표시, 화료, 유국등의 기능을 제공합니다.
 
 ## 다운로드
-https://github.com/HaYeongJIN/Mahjong-Utility/releases/tag/v1.0.0
+[다운로드](https://github.com/HaYeongJIN/Mahjong-Utility/releases/tag/v1.0.1)
 
 ## 기술 스택
 ### Frontend
