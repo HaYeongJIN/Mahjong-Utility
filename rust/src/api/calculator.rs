@@ -211,14 +211,25 @@ pub(crate) fn calculate_score_logic(
     result_text
 }
 
+// 기존 사용자님의 원본 코드와 라이브러리(calculate_shanten)를 그대로 사용합니다!
+
 pub(crate) fn calculate_shanten_wait(final_hand_str: &str) -> String {
-    let parsed = match parse_hand_with_aka(final_hand_str) {
+    // [✨ 핵심 수정 포인트] 
+    // 대기패 분석 시 안깡/밍깡으로 강제 고정되는 것을 막기 위해 모든 괄호를 제거합니다.
+    // 이렇게 하면 [1111m]이 1111m(순수한 내 손패 4장)으로 변해서 자유롭게 쪼개질 수 있습니다.
+    let clean_hand_str = final_hand_str
+        .replace("[", "").replace("]", "")
+        .replace("(", "").replace(")", "");
+
+    // 원래 문자열 대신 괄호가 지워진 clean_hand_str을 파싱합니다.
+    let parsed = match parse_hand_with_aka(&clean_hand_str) {
         Ok(p) => p,
         Err(_) => return format!("문자열 파싱 오류\n올바른 마작 표기법인지 확인해주세요.\n---\n손패:{}", final_hand_str),
     };
 
     let counts = to_counts(&parsed.tiles);
     
+    // 라이브러리의 샹텐 계산기를 그대로 사용! (괄호가 없으니 정상적으로 0이 나옵니다)
     let shanten_result = calculate_shanten(&counts);
     let shanten_num = shanten_result.shanten as i32;
     
@@ -234,9 +245,11 @@ pub(crate) fn calculate_shanten_wait(final_hand_str: &str) -> String {
         ];
         
         for &t_name in all_tiles.iter() {
-            let test_hand_str = format!("{}{}", final_hand_str, t_name);
+            // 패를 붙일 때도 괄호가 제거된 clean_hand_str을 기준으로 합니다.
+            let test_hand_str = format!("{}{}", clean_hand_str, t_name);
             
             if let Ok(test_parsed) = parse_hand_with_aka(&test_hand_str) {
+                // (사용자님의 최초 코드 로직 그대로 유지)
                 let mut is_valid_count = true;
                 for tile in &test_parsed.tiles {
                     let count = test_parsed.tiles.iter().filter(|&t| t == tile).count();
